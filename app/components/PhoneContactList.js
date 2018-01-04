@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { FlatList, Text, View, StyleSheet } from "react-native";
+import { FlatList, Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Actions } from 'react-native-router-flux';
 import Avatar from "./avatar/Avatar";
 
 
@@ -11,11 +12,11 @@ const data = [{
   firstName: '陈',
   secondName: '崇发',
   phoneNumber: '18829292227'
-},{
+}, {
   firstName: '陈',
   secondName: '崇发',
   phoneNumber: '18829292227'
-},{
+}, {
   firstName: '陈',
   secondName: '崇发',
   phoneNumber: '18829292227'
@@ -40,7 +41,9 @@ export default class PhoneContactList extends Component {
 
   _renderItem = ({ item }) => (
     <View style={styles.contactItem}>
-      <Avatar text={item.firstName}/>
+      <TouchableOpacity onPress={Actions.contactDetail}>
+        <Avatar text={item.firstName}/>
+      </TouchableOpacity>
       <Text> {item.secondName} </Text>
       <Text> {item.phoneNumber} </Text>
     </View>

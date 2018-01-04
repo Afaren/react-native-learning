@@ -1,6 +1,7 @@
 import PhoneContactList from "./components/PhoneContactList";
-import {Router, Scene, Stack } from "react-native-router-flux";
+import { Router, Scene, Stack } from "react-native-router-flux";
 import * as React from "react";
+import ContactDetail from "./components/ContactDetail";
 
 
 const AppRouter = () => (
@@ -11,6 +12,12 @@ const AppRouter = () => (
         component={PhoneContactList}
         title='通讯录'
         initial
+      />
+      <Scene
+        key='contactDetail'
+        component={ContactDetail}
+        title='Contact Detail'
+        backTitle='返回'
       />
     </Stack>
   </Router>
