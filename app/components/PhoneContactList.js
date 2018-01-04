@@ -53,12 +53,14 @@ export default class PhoneContactList extends Component {
 
   render() {
     return (
-      <FlatList
-        data={data}
-        keyExtractor={this._keyExtractor}
-        renderItem={this._renderItem}
-        ItemSeparatorComponent={this._renderSeparator}
-      />
+      <View>
+        <FlatList
+          data={data}
+          keyExtractor={this._keyExtractor}
+          renderItem={this._renderItem}
+          ItemSeparatorComponent={this._renderSeparator}
+        />
+      </View>
     );
   }
 }

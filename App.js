@@ -12,6 +12,7 @@ import {
   View
 } from 'react-native';
 import  PhoneContactList from "./app/components/PhoneContactList";
+import AppRouter from "./app/routers";
 
 
 
@@ -26,7 +27,7 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <PhoneContactList />
+        <AppRouter/>
       </View>
     );
   }
@@ -34,10 +35,9 @@ export default class App extends Component<{}> {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 100,
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center', /* 一放开就将列表挤掉 */
     backgroundColor: '#F5FCFF',
   },
   welcome: {
